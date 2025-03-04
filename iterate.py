@@ -2,7 +2,7 @@ import os
 import re
 import glob
 
-# Define the replacement code as a multi-line string.
+# Define the replacement header code as a multi-line string.
 replacement_code = """<header id="top">
 		
 		<div class="container">
@@ -61,7 +61,7 @@ replacement_code = """<header id="top">
                                     <a href="./../teaching/">Teaching</a>
                                 </li>
 								<li id="menu-item-7122" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7122">
-                                    <a href="./">News</a>
+                                    <a href="./../news">News</a>
                                 </li>
 								<li id="menu-item-7118" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7118">
                                     <a href="./../contact/">Contact</a>
@@ -71,22 +71,34 @@ replacement_code = """<header id="top">
 				</div>"""
 
 # Compile a regex pattern that matches content between the two markers.
-# This pattern uses positive lookbehind and lookahead to keep the markers intact.
+# This uses positive lookbehind and lookahead so that the markers remain intact.
 pattern = re.compile(r'(?<=<!--/search-outer-->).*?(?=<!--/span_9-->)', re.DOTALL)
 
-# Specify the root directory to search (use absolute or relative path as needed).
-root_directory = "."
+# Get the absolute path of the folder where the Python file is located.
+root_directory = os.path.abspath(".")
 
-# Iterate through all HTML files in the root directory and all subdirectories.
+# Define the names of directories to exclude.
+excluded_dirs = {"publications", "teaching", "news", "alumni", "current-members", "contact"}
+
+# Recursively get all HTML files under the root directory.
 html_files = glob.glob(os.path.join(root_directory, '**', '*.html'), recursive=True)
 
 for filepath in html_files:
+    file_dir = os.path.abspath(os.path.dirname(filepath))
+    # Skip HTML files in the root folder (same folder as this Python file).
+    if file_dir == root_directory:
+        print(f"Skipping {filepath} (in root folder)")
+        continue
+    # Skip HTML files in any folder with a basename in the excluded list.
+    if os.path.basename(file_dir) in excluded_dirs:
+        print(f"Skipping {filepath} (in excluded folder)")
+        continue
+
     with open(filepath, "r", encoding="utf-8") as file:
         content = file.read()
 
-    # Check if the markers exist in the file.
+    # Only process the file if both markers exist.
     if re.search(pattern, content):
-        # Replace the content between the markers with the new header code.
         new_content = re.sub(pattern, "\n" + replacement_code + "\n", content)
         with open(filepath, "w", encoding="utf-8") as file:
             file.write(new_content)
