@@ -10,26 +10,28 @@ def determine_last_page():
 
 def build_page_numbers(current, total):
     """
-    Build a list representing the page numbers to display.
-    Always include page 1 and the last page.
-    Use a window around the current page.
-    
-    For example:
-      - If current <= 3: return [1, 2, 3, "...", total]
-      - If current >= total-2: return [1, "...", total-2, total-1, total]
-      - Otherwise: return [1, "...", current-1, current, current+1, "...", total]
+    Build a list representing the page numbers (and ellipsis placeholders) for pagination.
+
+    Rules:
+      - If total <= 5: list all pages.
+      - If current is 1 or 2: show [1, 2, 3, "…", total].
+      - If current is 3: show [1, 2, 3, 4, "…", total].
+      - If current is near the end (i.e. current >= total - 1): show [1, "…", total-2, total-1, total].
+      - Otherwise: show [1, "…", current-1, current, current+1, "…", total].
     """
     if total <= 5:
         return list(range(1, total+1))
-    if current <= 3:
-        return list(range(1, 4)) + ["..."] + [total]
-    elif current >= total - 2:
-        return [1] + ["..."] + list(range(total-2, total+1))
+    if current <= 2:
+        return [1, 2, 3, "...", total]
+    elif current == 3:
+        return [1, 2, 3, 4, "...", total]
+    elif current >= total - 1:
+        return [1, "...", total-2, total-1, total]
     else:
-        return [1] + ["..."] + [current-1, current, current+1] + ["..."] + [total]
+        return [1, "...", current-1, current, current+1, "...", total]
 
 def update_pagination_for_page(current, total):
-    """Update the pagination block in page_current.html based on current and total pages."""
+    """Update the pagination block in page_{current}.html based on the current page and total pages."""
     filename = f"page_{current}.html"
     if not os.path.exists(filename):
         print(f"{filename} does not exist. Skipping.")
@@ -45,18 +47,18 @@ def update_pagination_for_page(current, total):
         "data-currentpage": str(current)
     })
 
-    # If current page is not 1, add a left arrow item linking to previous page.
+    # Add a left arrow if current page is not the first.
     if current > 1:
         li_prev = soup.new_tag("li")
         a_prev = soup.new_tag("a", role="button")
-        a_prev.string = "‹"  # Left arrow
+        a_prev.string = "‹"
         a_prev["onclick"] = f"loadContent('./page_{current-1}.html')"
         li_prev.append(a_prev)
         ul.append(li_prev)
 
-    # Build the page numbers.
-    page_nums = build_page_numbers(current, total)
-    for item in page_nums:
+    # Build the page number items.
+    page_items = build_page_numbers(current, total)
+    for item in page_items:
         li = soup.new_tag("li")
         a = soup.new_tag("a", role="button")
         if item == "...":
@@ -70,16 +72,16 @@ def update_pagination_for_page(current, total):
         li.append(a)
         ul.append(li)
 
-    # If current page is not the last page, add a right arrow item linking to next page.
+    # Add a right arrow if current page is not the last.
     if current < total:
         li_next = soup.new_tag("li")
         a_next = soup.new_tag("a", role="button")
-        a_next.string = "›"  # Right arrow
+        a_next.string = "›"
         a_next["onclick"] = f"loadContent('./page_{current+1}.html')"
         li_next.append(a_next)
         ul.append(li_next)
 
-    # Replace the existing pagination block with the new <ul>
+    # Replace the old pagination block with the new one.
     wrapper = soup.find("div", class_="pt-cv-pagination-wrapper")
     if wrapper:
         old_ul = wrapper.find("ul", class_="pt-cv-pagination")
@@ -88,7 +90,7 @@ def update_pagination_for_page(current, total):
         else:
             wrapper.append(ul)
     else:
-        # If no wrapper exists, you might choose to create it.
+        # If no wrapper exists, create one.
         new_wrapper = soup.new_tag("div", **{"class": "pt-cv-pagination-wrapper"})
         new_wrapper.append(ul)
         if soup.body:
@@ -101,9 +103,9 @@ def update_pagination_for_page(current, total):
     print(f"Updated pagination in {filename}.")
 
 def update_all_pagination():
-    """Update pagination for all page files."""
+    """Update pagination for all page files based on the total number of pages."""
     total = determine_last_page()
-    for current in range(1, total + 1):
+    for current in range(1, total+1):
         update_pagination_for_page(current, total)
 
 if __name__ == "__main__":
