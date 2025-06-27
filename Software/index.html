@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Teaching | Your Lab</title>
+  <title>Software | Your Lab</title>
   <style>
     /* 1) Font import & base variable */
     @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap");
@@ -27,7 +27,7 @@
       box-shadow:0 4px 12px rgba(0,0,0,0.2);
     }
     .logo img { max-height:80px; width:auto; display:block }
-	    nav { display: flex; justify-content: space-between; align-items: center; }
+        nav { display: flex; justify-content: space-between; align-items: center; }
     .nav-links { list-style: none; display: flex; gap: 1rem; }
     /*nav { display:flex; justify-content:space-between; align-items:center }
     .nav-links { list-style:none; display:flex; gap:1rem }
@@ -74,7 +74,54 @@
     @media (max-width:800px) {
       .nav-links { flex-direction:column; gap:.5rem }
     }
-  </style>
+   .software-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* ← exactly 2 columns */
+  gap: 2rem;
+}
+@media (max-width: 600px) {
+  .software-grid {
+    grid-template-columns: 1fr; /* collapse to 1 column on small screens */
+  }
+}
+
+  /* Individual card */
+  .software-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    background: #fff;
+  }
+
+  /* Title link */
+  .software-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .software-item h3 a {
+    color: #1167b1;
+    text-decoration: none;
+  }
+  .software-item h3 a:hover {
+    text-decoration: underline;
+  }
+
+  /* Screenshot / thumbnail */
+  .software-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Description text */
+  .software-item p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.4;
+  }
+</style>
+
 </head>
 <body>
   <header>
@@ -96,55 +143,20 @@
     </div>
   </header>
 
-  <main class="container">
-    <section id="teaching">
-      <h2>Teaching</h2>
-      <ul class="teaching-list">
+<main class="container">
+  <section id="software">
+    <h2>Software</h2>
+    <div class="software-grid">
 
-        <li class="teaching-item">
-          <p class="session">SNU Fall 2019</p>
-          <p class="course-title">Convex Optimization</p>
-        </li>
+      <div class="software-item">
+        <h3><a href="https://github.com/Koopy29542/Koopy">Koopy</a></h3>
+        <img src="koopman_overview.png" alt="Koopy preview">
+        <p>Official implementation of Koopy.</p>
+      </div>
 
-        <li class="teaching-item">
-          <p class="session">SNU Fall 2019</p>
-          <p class="course-title">Feedback Control Systems</p>
-        </li>
-
-        <li class="teaching-item">
-          <p class="session">Samsung Summer 2019</p>
-          <p class="course-title">Deep Reinforcement Learning</p>
-        </li>
-
-        <li class="teaching-item">
-          <p class="session">SNU Spring 2019</p>
-          <p class="course-title">Robotics & Autonomous Systems</p>
-        </li>
-
-        <li class="teaching-item">
-          <p class="session">SNU Fall 2018</p>
-          <p class="course-title">Optimal Control Theory</p>
-        </li>
-
-        <li class="teaching-item">
-          <p class="session">SNU Spring 2018</p>
-          <p class="course-title">Stochastic Control & Reinforcement Learning</p>
-        </li>
-
-        <li class="teaching-item">
-          <p class="session">USC Fall 2017</p>
-          <p class="course-title">Linear Algebra for Engineering</p>
-        </li>
-
-        <li class="teaching-item">
-          <p class="session">USC Fall 2016</p>
-          <p class="course-title">Linear System Theory</p>
-        </li>
-
-      </ul>
-    </section>
-  </main>
-
+    </div>
+  </section>
+</main>
   <footer>
     <div class="container">
       &copy; 2025 Your Name or Lab. All rights reserved.
