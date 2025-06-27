@@ -5,9 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Publications | Your Lab</title>
   <style>
+    /* 1) Import your new font */
+    @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap");
+
+    /* 2) Define font-family variable */
+    :root {
+      --font-family-sans-serif: 'Lato', Arial, sans-serif;
+    }
+
+    /* 3) Base typography */
+    html {
+      font-family: var(--font-family-sans-serif);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    body {
+      font-family: var(--font-family-sans-serif);
+      color: #333;
+    }
+
     /* Reset and base styles */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
 
@@ -20,8 +38,6 @@
     nav { display: flex; justify-content: space-between; align-items: center; }
     .nav-links { list-style: none; display: flex; gap: 1rem; }
     .dropdown { position: relative; }
-        footer { background: #f8f9fa; text-align: center; padding: 1rem 2rem; font-size: 0.9rem; }
-
     .dropdown-menu {
       display: none;
       position: absolute; top: 100%; left: 0;
@@ -33,42 +49,45 @@
     .dropdown-menu li { padding: 0.3rem 1rem; }
     .dropdown-menu li:hover { background: #f0f0f0; }
 
+    footer { background: #f8f9fa; text-align: center; padding: 1rem 2rem; font-size: 0.9rem; }
+
     /* Page title */
     main { padding: 2rem; }
     h2 { margin-bottom: 1rem; font-size: 2rem; }
 
     /* Year blocks */
     .publication-year { margin-bottom: 2rem; }
-  .publication-year h3 {
+    .publication-year h3 {
       font-weight: normal;
-    font-size: 1.5rem;
-    margin-bottom: 0.75rem;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 0.25rem;
-    text-align: center;               /* ← center years */
-  }
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.25rem;
+      text-align: center;
+    }
 
-  /* List styling */
-  .publication-list { list-style: none; padding-left: 0; }
-  .publication-list li { margin-bottom: 1.5rem; }
-  .publication-list li h4 {
-    font-size: 1.1rem;
-    margin-bottom: 0.25rem;
-  }
-  /* blue link color */
-  .publication-list li h4 a {
-    color: #1167b1;
-    text-decoration: none;
-  }
-  .publication-list li h4 a:hover {
-    text-decoration: underline;
-  }
-  .publication-list li p {
-    font-size: 0.95rem;
-    color: #555;
-    margin-bottom: 0.25rem;
-  }
-  .publication-list li p em { font-style: italic; }
+    /* List styling */
+    .publication-list { list-style: none; padding-left: 0; }
+    .publication-list li { margin-bottom: 1.5rem; }
+    .publication-list li h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+    }
+    /* blue link color */
+    .publication-list li h4 a {
+      color: #1167b1;
+      text-decoration: none;
+      font-weight: normal; /* ensure links aren’t bold */
+    }
+    .publication-list li h4 a:hover {
+      text-decoration: underline;
+    }
+    .publication-list li p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 0.25rem;
+    }
+    .publication-list li p em { font-style: italic; }
 
     /* Responsive */
     @media (max-width: 600px) {
@@ -83,20 +102,21 @@
         <div class="logo">
           <a href="../"><img src="../LDS.jpg" alt="YourLabName logo"></a>
         </div>
-     <ul class="nav-links">
-  <li><a href="../">Home</a></li>
-  <li class="dropdown">
-    <a href="../people/">People</a>
-    <ul class="dropdown-menu">
-      <li><a href="../people/current-members/">Current Members</a></li>
-      <li><a href="../people/alumni/">Alumni</a></li>
-    </ul>
-  </li>
-  <li><a href="./">Publications</a></li>
-  <li><a href="../teaching/">Teaching</a></li>
-  <li><a href="../news/">News</a></li>
-  <li><a href="../contact/">Contact</a></li>
-</ul>
+        <ul class="nav-links">
+          <li><a href="../">Home</a></li>
+          <li class="dropdown">
+            <a href="../people/">People</a>
+            <ul class="dropdown-menu">
+              <li><a href="../people/current-members/">Current Members</a></li>
+              <li><a href="../people/alumni/">Alumni</a></li>
+            </ul>
+          </li>
+          <li><a href="./">Publications</a></li>
+          <li><a href="../Software/">Software</a></li>
+          <li><a href="../teaching/">Teaching</a></li>
+          <li><a href="../news/">News</a></li>
+          <li><a href="../contact/">Contact</a></li>
+        </ul>
       </nav>
     </div>
   </header>
