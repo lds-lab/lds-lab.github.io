@@ -53,6 +53,18 @@
     #teaching h2 {
       font-size:2rem; margin-bottom:1.5rem; text-align:center;
     }
+      .dropdown { position: relative; }
+    .dropdown-menu {
+      display: none;
+      position: absolute; top: 100%; left: 0;
+      background: #fff; border: 1px solid #ddd;
+      list-style: none; padding: 0.5rem 0; min-width: 150px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1); white-space: nowrap;
+    }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu li { padding: 0.3rem 1rem; }
+    .dropdown-menu li:hover { background: #f0f0f0; }
+
     .teaching-list { list-style:none }
     .teaching-item {
       margin-bottom:2rem;
@@ -132,7 +144,7 @@
         </div>
         <ul class="nav-links">
           <li><a href="../">Home</a></li>
-          <li><a href="../people/">People</a></li>
+          <li> <a href="../People/">People</a></li>
           <li><a href="../publications/">Publications</a></li>
           <li><a href="../Software/">Software</a></li>
           <li><a href="./" class="current">Teaching</a></li>

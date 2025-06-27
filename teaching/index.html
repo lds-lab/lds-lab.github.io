@@ -15,6 +15,18 @@
       font-family: var(--font-family-sans-serif);
       font-size: 15px; line-height: 1.6; color: #333;
     }
+	  .dropdown { position: relative; }
+    .dropdown-menu {
+      display: none;
+      position: absolute; top: 100%; left: 0;
+      background: #fff; border: 1px solid #ddd;
+      list-style: none; padding: 0.5rem 0; min-width: 150px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1); white-space: nowrap;
+    }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu li { padding: 0.3rem 1rem; }
+    .dropdown-menu li:hover { background: #f0f0f0; }
+
     body { background:#fff; }
     a { text-decoration:none; color:inherit }
    /* a:hover { text-decoration:underline }*/
@@ -85,7 +97,7 @@
         </div>
         <ul class="nav-links">
           <li><a href="../">Home</a></li>
-          <li><a href="../people/">People</a></li>
+      <li> <a href="../People/">People</a></li>
           <li><a href="../publications/">Publications</a></li>
           <li><a href="../Software/">Software</a></li>
           <li><a href="./" class="current">Teaching</a></li>

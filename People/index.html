@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>People | Your Lab</title>
+  <style>
+    /* 1) Font import & base variable */
+    @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap");
+    :root { --font-family-sans-serif: 'Lato', Arial, sans-serif; }
+
+    /* 2) Reset & base typography */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html {
+      font-family: var(--font-family-sans-serif);
+      font-size: 15px; line-height: 1.6; color: #333;
+    }
+    body { background: #fff; }
+
+    a { text-decoration: none; color: inherit; }
+    a:hover { text-decoration: underline; }
+
+    img { max-width: 100%; display: block; }
+
+    /* 3) Container & layout */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    header {
+      background: #f8f9fa;
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo img {
+      max-height: 80px;
+      width: auto;
+      display: block;
+    }
+
+    /* 4) Nav links & dropdown */
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+    .nav-links li { position: relative; }
+    .nav-links a {
+      padding-bottom: 0.25rem;
+      font-weight: 400;
+      color: #1167b1;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%; left: 0;
+      background: #fff; border: 1px solid #ddd;
+      list-style: none; padding: 0.5rem 0;
+      min-width: 150px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu li { padding: 0.3rem 1rem; }
+    .dropdown-menu li:hover { background: #f0f0f0; }
+
+    /* 5) Person list styling */
+    main { padding: 2rem 0; }
+    #current-members h2 {
+      font-size: 2rem;
+      margin: 2rem 0 1rem;
+      text-align: center;
+      color: #333;
+    }
+    .person-list { list-style: none; padding-left: 0; }
+    .person-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .person-list img {
+      width: 180px;
+      height: auto;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .person-list .info h3 {
+      margin-bottom: 0.25rem;
+      font-size: 1.25rem;
+      color: #1167b1;
+    }
+    .person-list .info p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+
+    /* 6) Footer */
+    footer {
+      background: #f8f9fa;
+      text-align: center;
+      padding: 1rem 2rem;
+      font-size: 0.9rem;
+    }
+
+    /* 7) Responsive */
+    @media (max-width: 800px) {
+      .person-list li {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .person-list img { margin-bottom: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="../"><img src="../LDS.jpg" alt="YourLabName logo"></a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="../">Home</a></li>
+          <li> <a href="../People/">People</a></li>
+          <li><a href="../publications/">Publications</a></li>
+          <li><a href="../Software/">Software</a></li>
+          <li><a href="../teaching/">Teaching</a></li>
+          <li><a href="../news/">News</a></li>
+          <li><a href="../contact/">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="current-members">
+
+      <h2>Principal Investigator</h2>
+      <ul class="person-list">
+        <li>
+          <img src="../wp-content/uploads/2018/11/in1.jpg" alt="Insoon Yang">
+          <div class="info">
+            <h3><a href="https://lds-insoon.github.io/">Insoon Yang</a></h3>
+            <p>Ph.D., EECS, UC Berkeley</p>
+            <p>Personal webpage: <a href="https://lds-insoon.github.io/">lds-insoon.github.io</a><br>
+               Email: insoonyang at snu dot ac dot kr
+            </p>
+          </div>
+        </li>
+      </ul>
+
+      <h2>Postdoctoral Researchers</h2>
+      <ul class="person-list">
+        <li>
+          <img src="../wp-content/uploads/2021/10/cho.jpg" alt="Youngchae Cho">
+          <div class="info">
+            <h3>Youngchae Cho</h3>
+            <p>Ph.D., Engineering, Tokyo Institute of Technology</p>
+            <p>Research Interest: Robust Optimization, Power Systems</p>
+          </div>
+        </li>
+      </ul>
+
+      <h2>Graduate Students</h2>
+      <ul class="person-list">
+        <li>
+          <img src="../wp-content/uploads/2020/01/shin.jpg" alt="Jaeuk Shin">
+          <div class="info">
+            <h3>Jaeuk Shin</h3>
+            <p>M.S., Math, Seoul National University</p>
+            <p>Research Interest: Reinforcement Learning</p>
+          </div>
+        </li>
+        <li>
+          <img src="../wp-content/uploads/2020/07/Gihwan.jpg" alt="Gihwan Kim">
+          <div class="info">
+            <h3>Gihwan Kim</h3>
+            <p>M.S., ECE, Seoul National University</p>
+            <p>Research Interest: Autonomous Systems</p>
+          </div>
+        </li>
+        <li>
+          <img src="../wp-content/uploads/2020/01/69779BFD-BF32-4464-9E03-5C796CCBABC8.jpeg" alt="Giho Kim">
+          <div class="info">
+            <h3>Giho Kim</h3>
+            <p>B.S., IEOR, Seoul National University</p>
+            <p>Research Interest: Optimization for Machine Learning</p>
+          </div>
+        </li>
+        <li>
+          <img src="../wp-content/uploads/2020/07/Mingyu.jpg" alt="Mingyu Park">
+          <div class="info">
+            <h3>Mingyu Park</h3>
+            <p>B.S., Aerospace Engineering, Seoul National University</p>
+            <p>Research Interest: Reinforcement Learning, POMDP</p>
+          </div>
+        </li>
+        <li>
+          <img src="../wp-content/uploads/2021/09/Chanwoong.jpg" alt="Chanwoong Park">
+          <div class="info">
+            <h3>Chanwoong Park</h3>
+            <p>B.S., ECE, Seoul National University</p>
+            <p>Research Interest: Optimization for Machine Learning</p>
+          </div>
+        </li>
+        <li>
+          <img src="../wp-content/uploads/2022/09/Jaeseok.jpg" alt="Jaeseok Joo">
+          <div class="info">
+            <h3>Jaeseok Joo</h3>
+            <p>B.S., ECE, Seoul National University</p>
+            <p>Research Interest: Reinforcement Learning</p>
+          </div>
+        </li>
+        <li>
+          <img src="../wp-content/uploads/2023/03/Joon.jpg" alt="Joon Ho Han">
+          <div class="info">
+            <h3>Joon Ho Han</h3>
+            <p>B.S., ECE, Seoul National University</p>
+            <p>Research Interest: Reinforcement Learning</p>
+          </div>
+        </li>
+        <li>
+          <img src="../wp-content/uploads/2023/03/Howon-scaled.jpg" alt="Howon Lee">
+          <div class="info">
+            <h3>Howon Lee</h3>
+            <p>B.S., ECE, Seoul National University<br>
+               M.S., ECE, University of Southern California
+            </p>
+            <p>Research Interest: Optimization for Machine Learning</p>
+          </div>
+        </li>
+        <li>
+          <img src="../wp-content/uploads/2023/12/Wonhyung.jpg" alt="Wonhyung Jung">
+          <div class="info">
+            <h3>Wonhyung Jung</h3>
+            <p>B.S., ECE, Seoul National University</p>
+            <p>Research Interest: Reinforcement Learning</p>
+          </div>
+        </li>
+        <li>
+          <img src="../wp-content/uploads/2023/12/IMG_9895.jpg" alt="Jungjin Lee">
+          <div class="info">
+            <h3>Jungjin Lee</h3>
+            <p>B.S., ME, Seoul National University</p>
+            <p>Research Interest: Stochastic Control</p>
+          </div>
+        </li>
+      </ul>
+<h2>Undergraduate Students</h2>
+<ul class="person-list">
+  <li>
+    <img src="../wp-content/uploads/2018/11/bl2.jpg" alt="Jungbin Kim">
+    <div class="info">
+      <h3>Jungbin Kim</h3>
+      <p>B.S., IEOR &amp; Math, Seoul National University</p>
+      <p>Research Interest: Optimization for Machine Learning</p>
+    </div>
+  </li>
+  <li>
+    <img src="../wp-content/uploads/2023/03/Min Hyuk.jpg" alt="Min Hyuk Jang">
+    <div class="info">
+      <h3>Min Hyuk Jang</h3>
+      <p>B.S., ME, Seoul National University</p>
+      <p>Research Interest: Distributionally Robust Control</p>
+    </div>
+  </li>
+  <li>
+    <img src="../wp-content/uploads/2020/01/69779BFD-BF32-4464-9E03-5C796CCBABC8.jpeg" alt="Jaemoon Lee">
+    <div class="info">
+      <h3>Jaemoon Lee</h3>
+      <p>B.S., Mathematics, Seoul National University</p>
+      <p>Research Interest: Reinforcement Learning</p>
+    </div>
+  </li>
+  <li>
+    <!-- placeholder blank image -->
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="" class="placeholder">
+    <div class="info">
+      <h3>Sooho Yang</h3>
+      <p>B.S., ECE, Seoul National University</p>
+      <p>Research Interest: Distributionally Robust Control</p>
+    </div>
+  </li>
+</ul>
+
+
+      <h2>Administrative Assistant</h2>
+      <ul class="person-list">
+        <li>
+			<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="" class="placeholder">
+          <div class="info">
+            <h3>Soonkyung Jung</h3>
+            <p>Email: newan83@snu.ac.kr</p>
+          </div>
+        </li>
+      </ul>
+<section id="alumni">
+  <h2>Alumni</h2>
+  <ul class="alumni-list">
+    <li>Astghik Hakobyan (Ph.D., 2023) – Assistant Professor, National Polytechnic University of Armenia</li>
+    <li>Yeoneung Kim (Postdoc., 2022) – Assistant Professor, Dept. of Applied Artificial Intelligence, SeoulTech</li>
+    <li>Jeongho Kim (Postdoc., 2021) – Assistant Professor, Dept. of Applied Mathematics, Kyung Hee University</li>
+    <li>Gihun Kim (M.S., 2023)</li>
+    <li>Melike Ermis (M.S., 2021) – Startup</li>
+    <li>Subin Huh (M.S., 2020) – Samsung Electronics</li>
+    <li>Taewoo Kang (M.S., 2020) – TmaxSoft</li>
+    <li>Jihoon Kim (B.S., 2022) – Ph.D. program, UC Berkeley IEOR</li>
+    <li>Keunwoo Lim (B.S., 2021) – Ph.D. program, Univ. of Washington Applied Math</li>
+    <li>Kihyun Kim (B.S., 2021) – Ph.D. program, MIT EECS</li>
+    <li>Wonkyung Do (B.S., 2019) – Ph.D. program, Stanford University</li>
+    <li>Sunho Jang (B.S., 2019) – Ph.D. program, Univ. of Michigan EECS</li>
+    <li>Juan Moreno Nadales (Visitor, 2022) – Ph.D. program, Universidad de Sevilla, Spain</li>
+  </ul>
+</section>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      &copy; 2025 Your Name or Lab. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
