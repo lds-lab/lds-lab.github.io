@@ -33,8 +33,12 @@
     .logo img { max-height: 80px; width: auto; display: block; }
 
     /* Layout */
-    header { background: #f8f9fa; padding: 1rem 2rem; }
-    .container { max-width: 1000px; margin: 0 auto; }
+    header { background: #f8f9fa; padding: 1rem 2rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);}
+        .container {
+  /* widen your content area, or remove max-width completely */
+  max-width: 1200px;
+  margin: 0 auto;
+}
     nav { display: flex; justify-content: space-between; align-items: center; }
     .nav-links { list-style: none; display: flex; gap: 1rem; }
     .dropdown { position: relative; }
