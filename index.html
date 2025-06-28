@@ -40,8 +40,7 @@
   }   a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
 
-    /* Logo sizing */
-    .logo img { max-height: 80px; width: auto; display: block; }
+
 
     /* Layout */
     header { background: #f8f9fa; padding: 1rem 2rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);}
@@ -49,8 +48,15 @@
   /* widen your content area, or remove max-width completely */
   max-width: 1200px;
   margin: 0 auto;
+} 
+  /* neccesary components for indenting the sides of the menu*/
+  .logo img { max-height: 80px; max-width: 340px; display: block; }
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  
+  padding: 0 1rem;             
 }
-    nav { display: flex; justify-content: space-between; align-items: center; }
     .nav-links { list-style: none; display: flex; gap: 1rem; }
     .dropdown { position: relative; }
     .dropdown-menu {
