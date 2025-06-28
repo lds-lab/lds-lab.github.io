@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News | Your Lab</title>
+  <link rel="stylesheet" href="./css/news.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="../"><img src="../LDS.jpg" alt="YourLabName logo"></a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="../">Home</a></li>
+          <li><a href="../People/">People</a></li>
+          <li><a href="../publications/">Publications</a></li>
+          <li><a href="../Software/">Software</a></li>
+          <li><a href="../teaching/">Teaching</a></li>
+          <li><a href="../news/">News</a></li>
+          <li><a href="../contact/">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>News</h2>
+    <div class="news-grid">
+      
+    
+<!-- Page 3 (page_3.html) --><article class="news-item">
+  <time datetime="2023-09-29">September 29, 2023</time>
+  <h3>
+    <a href="/cdc23-2/">
+      Data-driven stochastic optimization using upper confidence bounds: performance guarantees and distributional robustness – IEEE Conference on Decision and Control (CDC), 2023
+    </a>
+  </h3>
+  <p>Youngchae Cho, Insoon Yang</p>
+</article>
+
+<article class="news-item">
+  <time datetime="2023-09-29">September 29, 2023</time>
+  <h3>
+    <a href="/cdc23-1/">
+      On concentration bounds for Bayesian identification of linear non-Gaussian systems – IEEE Conference on Decision and Control (CDC), 2023
+    </a>
+  </h3>
+  <p>Yeoneung Kim, Gihun Kim, Insoon Yang</p>
+</article>
+
+<article class="news-item">
+  <time datetime="2023-09-29">September 29, 2023</time>
+  <h3>
+    <a href="/cdc-3-papers/">
+      Three papers accepted to CDC 2023 – IEEE Conference on Decision and Control (CDC), 2023
+    </a>
+  </h3>
+  <p>Astghik Hakobyan, Insoon Yang</p>
+</article>
+
+<article class="news-item">
+  <time datetime="2023-04-25">April 25, 2023</time>
+  <h3>
+    <a href="/icml2023/">
+      Unifying Nesterov’s accelerated gradient methods for convex and strongly convex objectives – International Conference on Machine Learning (ICML), 2023 (Oral)
+    </a>
+  </h3>
+  <p>Jungbin Kim, Insoon Yang</p>
+</article>
+
+<article class="news-item">
+  <time datetime="2023-04-25">April 25, 2023</time>
+  <h3>
+    <a href="/icml-oral-unifying-nesterovs-agm-for-convex-and-strongly-convex-objective-functions/">
+      [ICML (Oral)] Unifying Nesterov’s AGM for convex and strongly convex objectives – International Conference on Machine Learning (ICML), 2023 (Oral)
+    </a>
+  </h3>
+  <p>Jungbin Kim, Insoon Yang</p>
+</article>
+
+<article class="news-item">
+  <time datetime="2023-03-23">March 23, 2023</time>
+  <h3>
+    <a href="/sicon-wasserstein-linear-quadratic-control/">
+      Distributional robustness in minimax linear quadratic control with Wasserstein distance – SIAM Journal on Control and Optimization, 2023
+    </a>
+  </h3>
+  <p>Insoon Yang</p>
+</article>
+
+<article class="news-item">
+  <time datetime="2023-03-23">March 23, 2023</time>
+  <h3>
+    <a href="/icra-distributionally-robust-optimization-with-unscented-transform-for-learning-based-control/">
+      Distributionally robust optimization with Unscented Transform for learning-based control – IEEE International Conference on Robotics and Automation (ICRA), 2023
+    </a>
+  </h3>
+  <p>Astghik Hakobyan, Insoon Yang</p>
+</article>
+
+<article class="news-item">
+  <time datetime="2023-03-14">March 14, 2023</time>
+  <h3>
+    <a href="/icra2023/">
+      Distributionally robust optimization with Unscented Transform for learning-based motion control in dynamic environments – IEEE International Conference on Robotics and Automation (ICRA), 2023
+    </a>
+  </h3>
+  <p>Astghik Hakobyan, Insoon Yang</p>
+</article>
+
+<article class="news-item">
+  <time datetime="2023-03-01">March 1, 2023</time>
+  <h3>
+    <a href="/tacmaxent/">
+      Maximum entropy optimal control of continuous-time dynamical systems – IEEE Transactions on Automatic Control, 68(4):2018–2033, 2023
+    </a>
+  </h3>
+  <p>Jeongho Kim, Insoon Yang</p>
+</article>
+
+<article class="news-item">
+  <time datetime="2023-03-01">March 1, 2023</time>
+  <h3>
+    <a href="/sicon2023/">
+      Distributional robustness in minimax linear quadratic control with Wasserstein distance – SIAM Journal on Control and Optimization, 61(2):458–483, 2023
+    </a>
+  </h3>
+  <p>Kihyun Kim, Insoon Yang</p>
+</article>
+
+    </div>
+
+    <nav class="pagination" id="pagination"></nav>
+  </main>
+  
+  <footer>
+    <div class="container">
+      &copy; 2025 Your Name or Lab. All rights reserved.
+    </div>
+  </footer>
+<script>
+(function() {
+  const totalPages = 23;
+  const pagePrefix = 'page';
+  const pageExt    = '.html';
+  const path       = location.pathname;
+  
+  // Determine current page: pageN.html → N, otherwise 1
+  let current = 2;
+  const m = path.match(/page_(\d+)\.html$/);
+  if (m) current = parseInt(m[1], 10);
+
+  const nav = document.getElementById('pagination');
+
+  function makeLink(page, text, cls) {
+    const a = document.createElement('a');
+    a.href = (page === 1 ? 'index.html' : pagePrefix + '_' + page + pageExt);
+    a.textContent = text;
+    if (cls) a.classList.add(cls);
+    return a;
+  }
+
+  function makeEllipsis() {
+    const e = document.createElement('a');
+    e.textContent = '…';
+    e.classList.add('disabled');
+    return e;
+  }
+
+  // First & Prev
+  nav.appendChild(
+    current === 1
+      ? makeLink(1, '« First', 'disabled')
+      : makeLink(1, '« First')
+  );
+  nav.appendChild(
+    current > 1
+      ? makeLink(current - 1, '‹ Prev')
+      : makeLink(1, '‹ Prev', 'disabled')
+  );
+
+  // Compute sliding window
+  const windowSize = 2;
+  let start = current - windowSize;
+  let end   = current + windowSize;
+  if (start < 1) start = 1;
+  if (end > totalPages) end = totalPages;
+
+  // Leading ellipsis if needed
+  if (start > 1) {
+    nav.appendChild(makeEllipsis());
+  }
+
+  // Page numbers in window
+  for (let i = start; i <= end; i++) {
+    if (i === current) {
+      const a = makeLink(i, i, 'current');
+      a.removeAttribute('href');
+      nav.appendChild(a);
+    } else {
+      nav.appendChild(makeLink(i, i));
+    }
+  }
+
+  // Trailing ellipsis if needed
+  if (end < totalPages) {
+    nav.appendChild(makeEllipsis());
+  }
+
+  // Next & Last
+  nav.appendChild(
+    current < totalPages
+      ? makeLink(current + 1, 'Next ›')
+      : makeLink(totalPages, 'Next ›', 'disabled')
+  );
+  nav.appendChild(
+    current === totalPages
+      ? makeLink(totalPages, 'Last »', 'disabled')
+      : makeLink(totalPages, 'Last »')
+  );
+})();
+</script>
+</body>
+</html>

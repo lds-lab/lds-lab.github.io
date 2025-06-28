@@ -4,123 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>News | Your Lab</title>
-  <style>
-    /* 1) Font import & base variable */
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700&display=swap");
-
-:root {
-  --font-family-sans-serif:
-    'Source Sans Pro',
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-
-  --font-family-monospace:
-    SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
-}
-
-    /* 2) Reset & base typography */
-    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box }
-    html {
-      font-family: var(--font-family-sans-serif);
-      font-size: 15px; line-height: 1.6; color: #333;
-    }
-	  .dropdown { position: relative; }
-    .dropdown-menu {
-      display: none;
-      position: absolute; top: 100%; left: 0;
-      background: #fff; border: 1px solid #ddd;
-      list-style: none; padding: 0.5rem 0; min-width: 150px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1); white-space: nowrap;
-    }
-    .dropdown:hover .dropdown-menu { display: block; }
-    .dropdown-menu li { padding: 0.3rem 1rem; }
-    .dropdown-menu li:hover { background: #f0f0f0; }
-
-    body { background:#fff; }
-    a { text-decoration:none; color:inherit }
-   /* a:hover { text-decoration:underline }*/
-    img { max-width:100%; display:block }
-
-    /* 3) Container & layout */
-    .container { max-width:1200px; margin:0 auto }
-    header {
-      background:#f8f9fa; padding:1rem 2rem;
-      box-shadow:0 4px 12px rgba(0,0,0,0.2);
-    }
-    .logo img { max-height:80px; width:auto; display:block }
-	    nav { display: flex; justify-content: space-between; align-items: center; }
-    .nav-links { list-style: none; display: flex; gap: 1rem; }
-    main { padding:2rem 0 }
- .news-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-  gap: 1.5rem;
-  margin: 2rem 0;
-}
-.news-item {
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  border: 1px solid #e0e0e0;
-  padding: 1rem;
-}
-.news-item img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 1rem;
-  object-fit: cover;
-}
-.news-item time {
-  font-size: .9rem;
-  color: #666;
-  margin-bottom: .5rem;
-  display: block;
-}
-.news-item h3 {
-  font-size: 1.25rem;
-  margin: 0 0 .75rem;
-}
-.news-item p {
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.4;
-}
-
-    /* 5) Footer */
-    footer {
-      background:#f8f9fa; text-align:center;
-      padding:1rem 2rem; font-size:.9rem;
-    }
-
-    /* 6) Responsive */
-    @media (max-width:800px) {
-      .nav-links { flex-direction:column; gap:.5rem }
-    }
-     .pagination {
-      display: flex;
-      justify-content: center;
-      gap: .5rem;
-      margin: 2rem 0;
-      font-size: .95rem;
-    }
-    .pagination a {
-      padding: .4rem .7rem;
-      border: 1px solid #ccc;
-      text-decoration: none;
-      color: #333;
-    }
-    .pagination a.current {
-      font-weight: bold;
-      background: #eee;
-    }
-    .pagination a.disabled {
-      color: #999;
-      pointer-events: none;
-      border-color: #eee;
-    }
-  </style>
+  <link rel="stylesheet" href="./css/news.css">
 </head>
 <body>
   <header>
@@ -131,7 +15,7 @@
         </div>
         <ul class="nav-links">
           <li><a href="../">Home</a></li>
-      <li> <a href="../People/">People</a></li>
+          <li><a href="../People/">People</a></li>
           <li><a href="../publications/">Publications</a></li>
           <li><a href="../Software/">Software</a></li>
           <li><a href="../teaching/">Teaching</a></li>
@@ -143,12 +27,140 @@
   </header>
 
   <main class="container">
-    <!-- grid wrapper for all news items -->
+    <h2>News</h2>
     <div class="news-grid">
+      <article class="news-item">
+  <a href="/tcst_vessel/">
+    <img src="/wp-content/uploads/2024/09/tcst_vessel.png" alt="">
+  </a>
+  <time datetime="2024-09-08">September 8, 2024</time>
+  <h3>
+    <a href="/tcst_vessel/">
+      Risk-aware Wasserstein distributionally robust control of vessels in natural waterways – IEEE Transactions on Control Systems Technology, 32(4):1471–1478, 2024
+    </a>
+  </h3>
+  <p>Juan Moreno Nadales, Astghik Hakobyan, David Muñoz de la Peña, Daniel Limon, Insoon Yang</p>
+</article>
+
+<article class="news-item">
+  <a href="/tac_drc_po/">
+    <img src="/wp-content/uploads/2024/09/tac_drc_po.png" alt="">
+  </a>
+  <time datetime="2024-09-08">September 8, 2024</time>
+  <h3>
+    <a href="/tac_drc_po/">
+      Wasserstein distributionally robust control of partially observable linear stochastic systems – IEEE Transactions on Automatic Control, 69(9):6121–6136, 2024
+    </a>
+  </h3>
+  <p>Astghik Hakobyan, Insoon Yang</p>
+</article>
+
+<article class="news-item">
+  <a href="/lcss_regret/">
+    <img src="/wp-content/uploads/2024/09/lcss_regret.png" alt="">
+  </a>
+  <time datetime="2024-09-08">September 8, 2024</time>
+  <h3>
+    <a href="/lcss_regret/">
+      Wasserstein distributionally robust regret minimization – IEEE Control Systems Letters, 8:820–825, 2024 (Selected for CDC ’24)
+    </a>
+  </h3>
+  <p>Youngchae Cho, Insoon Yang</p>
+</article>
+
+<article class="news-item">
+  <a href="/lcss_multi/">
+    <img src="/wp-content/uploads/2024/09/lcss_multi.png" alt="">
+  </a>
+  <time datetime="2024-09-08">September 8, 2024</time>
+  <h3>
+    <a href="/lcss_multi/">
+      Multiparametric analysis of multi-task Markov decision processes: structure, invariance, and reducibility – IEEE Control Systems Letters, 8:928–933, 2024 (Selected for CDC ’24)
+    </a>
+  </h3>
+  <p>Jaeuk Shin, Insoon Yang</p>
+</article>
+
+<article class="news-item">
+  <a href="/l4dc_metarl/">
+    <img src="/wp-content/uploads/2024/09/l4dc_metarl.png" alt="">
+  </a>
+  <time datetime="2024-09-08">September 8, 2024</time>
+  <h3>
+    <a href="/l4dc_metarl/">
+      On task-relevant loss functions in meta-reinforcement learning – Learning for Dynamics and Control (L4DC), 2024
+    </a>
+  </h3>
+  <p>Jaeuk Shin, Giho Kim, Howon Lee, Joonho Han, Insoon Yang</p>
+</article>
+
+<article class="news-item">
+  <a href="/aut_pomdp/">
+    <img src="" alt="">
+  </a>
+  <time datetime="2024-09-08">September 8, 2024</time>
+  <h3>
+    <a href="/aut_pomdp/">
+      Anderson acceleration for partially observable Markov decision processes: a maximum entropy approach – Automatica, 163:111557, 2024
+    </a>
+  </h3>
+  <p>Mingyu Park, Jaeuk Shin, Insoon Yang</p>
+</article>
+
+<article class="news-item">
+  <a href="/t-ase23/">
+    <img src="" alt="">
+  </a>
+  <time datetime="2023-09-29">September 29, 2023</time>
+  <h3>
+    <a href="/t-ase23/">
+      Control of fab lifters via deep reinforcement learning: a semi-MDP approach – IEEE Transactions on Automation Science and Engineering, accepted
+    </a>
+  </h3>
+  <p>Giho Kim, Jaeuk Shin, Gihun Kim, Joonrak Kim, Insoon Yang</p>
+</article>
+
+<article class="news-item">
+  <a href="/neurips23/">
+    <img src="" alt="">
+  </a>
+  <time datetime="2023-09-29">September 29, 2023</time>
+  <h3>
+    <a href="/neurips23/">
+      Convergence analysis of ODE models for accelerated first-order methods via positive semidefinite kernels – Advances in Neural Information Processing Systems (NeurIPS), 2023
+    </a>
+  </h3>
+  <p>Jungbin Kim, Insoon Yang</p>
+</article>
+
+<article class="news-item">
+  <a href="/neurips-analysis-of-ode-models-for-accelerated-methods-via-positive-semidefinite-kernels/">
+    <img src="" alt="">
+  </a>
+  <time datetime="2023-09-29">September 29, 2023</time>
+  <h3>
+    <a href="/neurips-analysis-of-ode-models-for-accelerated-methods-via-positive-semidefinite-kernels/">
+      [NeurIPS] Analysis of ODE models for accelerated methods via positive semidefinite kernels – Advances in Neural Information Processing Systems (NeurIPS), 2023
+    </a>
+  </h3>
+  <p>Jungbin Kim, Insoon Yang</p>
+</article>
+
+<article class="news-item">
+  <a href="/lcss23/">
+    <img src="" alt="">
+  </a>
+  <time datetime="2023-09-29">September 29, 2023</time>
+  <h3>
+    <a href="/lcss23/">
+      Distributionally robust differential dynamic programming with Wasserstein distance – IEEE Control Systems Letters, 7:2329–2334, 2023 (Selected for CDC ’23)
+    </a>
+  </h3>
+  <p>Astghik Hakobyan, Insoon Yang</p>
+</article>
 
     </div>
 
-    <!-- pagination block -->
     <nav class="pagination" id="pagination"></nav>
   </main>
   
@@ -157,67 +169,88 @@
       &copy; 2025 Your Name or Lab. All rights reserved.
     </div>
   </footer>
-  <script>
-    (function() {
-      // === CONFIGURE THIS ===
-      const totalPages = 10;         // ← how many pages you have
-      const baseName   = 'page';     // ← prefix of your files, e.g. page1.html
-      const pageExt    = '.html';    // ← normally “.html”
+<script>
+(function() {
+  const totalPages = 23;
+  const pagePrefix = 'page';
+  const pageExt    = '.html';
+  const path       = location.pathname;
+  
+  // Determine current page: pageN.html → N, otherwise 1
+  let current = 1;
+  const m = path.match(/page_(\d+)\.html$/);
+  if (m) current = parseInt(m[1], 10);
 
-      // figure out current page number from URL
-      const match = location.pathname.match(/page(\d+)\.html$/);
-      const current = match ? parseInt(match[1], 10) : 1;
+  const nav = document.getElementById('pagination');
 
-      const nav = document.getElementById('pagination');
-      function makeLink(page, text, cls) {
-        const a = document.createElement('a');
-        a.href = baseName + page + pageExt;
-        a.textContent = text;
-        if (cls) a.classList.add(cls);
-        return a;
-      }
+  function makeLink(page, text, cls) {
+    const a = document.createElement('a');
+    a.href = (page === 1 ? 'index.html' : pagePrefix + '_' + page + pageExt);
+    a.textContent = text;
+    if (cls) a.classList.add(cls);
+    return a;
+  }
 
-      // First
-      nav.appendChild(
-        current === 1
-          ? makeLink(1, '« First', 'disabled')
-          : makeLink(1, '« First')
-      );
+  function makeEllipsis() {
+    const e = document.createElement('a');
+    e.textContent = '…';
+    e.classList.add('disabled');
+    return e;
+  }
 
-      // Prev
-      nav.appendChild(
-        current > 1
-          ? makeLink(current - 1, '‹ Prev')
-          : makeLink(current - 1, '‹ Prev', 'disabled')
-      );
+  // First & Prev
+  nav.appendChild(
+    current === 1
+      ? makeLink(1, '« First', 'disabled')
+      : makeLink(1, '« First')
+  );
+  nav.appendChild(
+    current > 1
+      ? makeLink(current - 1, '‹ Prev')
+      : makeLink(1, '‹ Prev', 'disabled')
+  );
 
-      // page numbers (show a window of ±2 pages)
-      const start = Math.max(1, current - 2);
-      const end   = Math.min(totalPages, current + 2);
-      for (let i = start; i <= end; i++) {
-        nav.appendChild(
-          i === current
-            ? (() => { const a = makeLink(i, i, 'current'); a.removeAttribute('href'); return a; })()
-            : makeLink(i, i)
-        );
-      }
+  // Compute sliding window
+  const windowSize = 2;
+  let start = current - windowSize;
+  let end   = current + windowSize;
+  if (start < 1) start = 1;
+  if (end > totalPages) end = totalPages;
 
-      // Next
-      nav.appendChild(
-        current < totalPages
-          ? makeLink(current + 1, 'Next ›')
-          : makeLink(current + 1, 'Next ›', 'disabled')
-      );
+  // Leading ellipsis if needed
+  if (start > 1) {
+    nav.appendChild(makeEllipsis());
+  }
 
-      // Last
-      nav.appendChild(
-        current === totalPages
-          ? makeLink(totalPages, 'Last »', 'disabled')
-          : makeLink(totalPages, 'Last »')
-      );
-    })();
-  </script>
+  // Page numbers in window
+  for (let i = start; i <= end; i++) {
+    if (i === current) {
+      const a = makeLink(i, i, 'current');
+      a.removeAttribute('href');
+      nav.appendChild(a);
+    } else {
+      nav.appendChild(makeLink(i, i));
+    }
+  }
 
- 
+  // Trailing ellipsis if needed
+  if (end < totalPages) {
+    nav.appendChild(makeEllipsis());
+  }
+
+  // Next & Last
+  nav.appendChild(
+    current < totalPages
+      ? makeLink(current + 1, 'Next ›')
+      : makeLink(totalPages, 'Next ›', 'disabled')
+  );
+  nav.appendChild(
+    current === totalPages
+      ? makeLink(totalPages, 'Last »', 'disabled')
+      : makeLink(totalPages, 'Last »')
+  );
+})();
+</script>
+
 </body>
 </html>
