@@ -52,40 +52,41 @@
     .logo img { max-height:80px; width:auto; display:block }
 	    nav { display: flex; justify-content: space-between; align-items: center; }
     .nav-links { list-style: none; display: flex; gap: 1rem; }
-    /*nav { display:flex; justify-content:space-between; align-items:center }
-    .nav-links { list-style:none; display:flex; gap:1rem }
-    .nav-links li { position:relative }
-    .nav-links a {
-      position:relative; padding-bottom:.25rem;
-      color:#1167b1; font-weight:400;
-    }
-    .nav-links a::after {
-      content:""; position:absolute; left:0; bottom:0;
-      width:100%; height:3px;
-      background:linear-gradient(to right,#3a6ff2,#8339ff);
-      transform:scaleX(0); transform-origin:right;
-      transition:transform .3s ease;
-    }
-    .nav-links a:hover::after,
-    .nav-links a.current::after {
-      transform:scaleX(1); transform-origin:left;
-    }
-*/
-    /* 4) Teaching section styling */
     main { padding:2rem 0 }
-    #teaching h2 {
-      font-size:2rem; margin-bottom:1.5rem; text-align:center;
-    }
-    .teaching-list { list-style:none }
-    .teaching-item {
-      margin-bottom:2rem;
-    }
-    .teaching-item .session {
-      font-size:.95rem; color:#666; margin-bottom:.25rem;
-    }
-    .teaching-item .course-title {
-      font-size:1.25rem; font-weight:600;
-    }
+ .news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+.news-item {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  padding: 1rem;
+}
+.news-item img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+.news-item time {
+  font-size: .9rem;
+  color: #666;
+  margin-bottom: .5rem;
+  display: block;
+}
+.news-item h3 {
+  font-size: 1.25rem;
+  margin: 0 0 .75rem;
+}
+.news-item p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.4;
+}
 
     /* 5) Footer */
     footer {
@@ -96,6 +97,28 @@
     /* 6) Responsive */
     @media (max-width:800px) {
       .nav-links { flex-direction:column; gap:.5rem }
+    }
+     .pagination {
+      display: flex;
+      justify-content: center;
+      gap: .5rem;
+      margin: 2rem 0;
+      font-size: .95rem;
+    }
+    .pagination a {
+      padding: .4rem .7rem;
+      border: 1px solid #ccc;
+      text-decoration: none;
+      color: #333;
+    }
+    .pagination a.current {
+      font-weight: bold;
+      background: #eee;
+    }
+    .pagination a.disabled {
+      color: #999;
+      pointer-events: none;
+      border-color: #eee;
     }
   </style>
 </head>
@@ -120,13 +143,81 @@
   </header>
 
   <main class="container">
-  
-  </main>
+    <!-- grid wrapper for all news items -->
+    <div class="news-grid">
 
+    </div>
+
+    <!-- pagination block -->
+    <nav class="pagination" id="pagination"></nav>
+  </main>
+  
   <footer>
     <div class="container">
       &copy; 2025 Your Name or Lab. All rights reserved.
     </div>
   </footer>
+  <script>
+    (function() {
+      // === CONFIGURE THIS ===
+      const totalPages = 10;         // ← how many pages you have
+      const baseName   = 'page';     // ← prefix of your files, e.g. page1.html
+      const pageExt    = '.html';    // ← normally “.html”
+
+      // figure out current page number from URL
+      const match = location.pathname.match(/page(\d+)\.html$/);
+      const current = match ? parseInt(match[1], 10) : 1;
+
+      const nav = document.getElementById('pagination');
+      function makeLink(page, text, cls) {
+        const a = document.createElement('a');
+        a.href = baseName + page + pageExt;
+        a.textContent = text;
+        if (cls) a.classList.add(cls);
+        return a;
+      }
+
+      // First
+      nav.appendChild(
+        current === 1
+          ? makeLink(1, '« First', 'disabled')
+          : makeLink(1, '« First')
+      );
+
+      // Prev
+      nav.appendChild(
+        current > 1
+          ? makeLink(current - 1, '‹ Prev')
+          : makeLink(current - 1, '‹ Prev', 'disabled')
+      );
+
+      // page numbers (show a window of ±2 pages)
+      const start = Math.max(1, current - 2);
+      const end   = Math.min(totalPages, current + 2);
+      for (let i = start; i <= end; i++) {
+        nav.appendChild(
+          i === current
+            ? (() => { const a = makeLink(i, i, 'current'); a.removeAttribute('href'); return a; })()
+            : makeLink(i, i)
+        );
+      }
+
+      // Next
+      nav.appendChild(
+        current < totalPages
+          ? makeLink(current + 1, 'Next ›')
+          : makeLink(current + 1, 'Next ›', 'disabled')
+      );
+
+      // Last
+      nav.appendChild(
+        current === totalPages
+          ? makeLink(totalPages, 'Last »', 'disabled')
+          : makeLink(totalPages, 'Last »')
+      );
+    })();
+  </script>
+
+ 
 </body>
 </html>
