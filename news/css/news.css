@@ -173,3 +173,7 @@ footer {
   pointer-events: none;
   border-color: #eee;
 }
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
