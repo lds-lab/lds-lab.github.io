@@ -266,7 +266,7 @@ main {
 }
 .teaching-item .course-title {
   font-size: 1.25rem;
-  font-weight: 600;
+/*   font-weight: 600; */
 }
 
 /* Software grid layout */
