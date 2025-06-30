@@ -4,120 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LDS Lab</title>
-<style>
-  /* 1) Import Jost instead of Lato */
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700&display=swap");
-
-:root {
-  --font-family-sans-serif:
-    'Source Sans Pro',
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-
-  --font-family-monospace:
-    SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
-}
-
-  /* 3) Apply it site-wide */
-  html {
-    font-family: var(--font-family-sans-serif);
-    font-size: 15px;      /* slightly smaller base size */
-    line-height: 1.6;     /* a bit more breathing room */
-  }
-
-  /* Reset and base styles */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-   h2 {
-  font-weight: normal;
-}
-  body {
-    font-family: var(--font-family-sans-serif);
-    line-height: 1.6;
-    color: #333;
-  }   a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
-
-
-
-    /* Layout */
-    header { background: #f8f9fa; padding: 1rem 2rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);}
-    .container {
-  /* widen your content area, or remove max-width completely */
-  max-width: 1200px;
-  margin: 0 auto;
-} 
-  /* neccesary components for indenting the sides of the menu*/
-  .logo img { max-height: 80px; max-width: 340px; display: block; }
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;  
-   padding-left: 1rem;
-  padding-right: 5rem;            
-}
-    .nav-links { list-style: none; display: flex; gap: 1rem; }
-    .dropdown { position: relative; }
-    .dropdown-menu {
-      display: none;
-      position: absolute; top: 100%; left: 0;
-      background: #fff; border: 1px solid #ddd;
-      list-style: none; padding: 0.5rem 0; min-width: 150px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1); white-space: nowrap;
-    }
-    .dropdown:hover .dropdown-menu { display: block; }
-    .dropdown-menu li { padding: 0.3rem 1rem; }
-    .dropdown-menu li:hover { background: #f0f0f0; }
-
-    /* Hero */
-    .hero { padding: 4rem 2rem; text-align: center; background: #e9ecef; }
-    .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-    .hero p { font-size: 1.1rem; }
-
-    /* Sections */
-    section { padding: 3rem 2rem; }
-    h2 { margin-bottom: 1rem; }
-
-    /* Two-column layout below About */
-    .split-section {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 2rem;
-    }
-
-    /* News styling */
-    .news-list {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-    .news-item h3 { font-size: 1.2rem; margin-bottom: 0.2rem; }
-    .news-date { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
-    .news-item p { margin-bottom: 0.3rem; }
-   .news-item a { color: #8C1515; text-decoration: none; }
-    /* Research list styling */
-    .research-list li { margin-bottom: 1rem; font-size: 1rem; }
-
-    /* Footer */
-    footer { background: #f8f9fa; text-align: center; padding: 1rem 2rem; font-size: 0.9rem; }
-a:hover,
-a:focus {
-  text-decoration: underline;
-}
-    /* Responsive */
-    @media (max-width: 800px) {
-      .split-section { grid-template-columns: 1.5fr 0.5fr;
-  gap: 2rem; }
-    }
-    @media (max-width: 600px) {
-      .nav-links { flex-direction: column; gap: 0.5rem; }
-    }
-  </style>
+ <link rel="stylesheet" href="./css/major.css">
 </head>
 <body>
   <header>
@@ -126,7 +13,7 @@ a:focus {
         <div class="logo"><a href="./"><img src="LDS.jpg" alt="YourLabName logo"></a></div>
         <ul class="nav-links">
           <li><a href="./">Home</a></li>
-       <li> <a href="../People/">People</a></li>
+       <li> <a href="./People/">People</a></li>
           <li><a href="./publications/">Publications</a></li>
           <li><a href="./Software/">Software</a></li>
           <li><a href="./teaching/">Teaching</a></li>
