@@ -5,7 +5,8 @@
   display: grid;
   grid-template-columns: 1fr;   /* one column only */
   row-gap: 1.5rem;              /* vertical spacing between items */
-  margin: 2rem 1rem;
+  margin: 2rem auto;
+  max-width: 90%;
 }
 .news-item {
   display: flex;
