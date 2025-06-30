@@ -177,7 +177,8 @@ h2 {
 .person-list .info h3 {
   margin-bottom: 0.25rem;
   font-size: 1.25rem;
-  color: #1167b1;
+  color: #333;
+/*   color: #1167b1; */
 }
 .person-list .info p {
   font-size: 0.95rem;
