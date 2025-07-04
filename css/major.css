@@ -228,6 +228,8 @@ main {
   margin-top: 2rem;
   margin-bottom: 0.75rem;
   text-align: center;
+    font-weight: normal;
+
 }
 #contact a {
   color: var(--primary, #007bff);
