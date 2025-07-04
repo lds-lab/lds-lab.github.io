@@ -41,31 +41,50 @@ img {
 
 /* Layout */
 header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
   background: #f8f9fa;
   padding: 1rem 2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
+} 
+header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
 .logo img {
   max-height: 80px;
   max-width: 340px;
   display: block;
 }
+
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-left: 1rem;
   padding-right: 5rem;
+  width: 100%;
 }
+
 .nav-links {
   list-style: none;
   display: flex;
   gap: 1rem;
 }
+
 .dropdown {
   position: relative;
 }
