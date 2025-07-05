@@ -4,74 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Publications | LDS Lab</title>
+   <link rel="stylesheet" href="../css/major.css">
   <style>
-    /* 1) Import your new font */
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700&display=swap");
-
-:root {
-  --font-family-sans-serif:
-    'Source Sans Pro',
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-
-  --font-family-monospace:
-    SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
-}
-
-    /* 3) Base typography */
-    html {
-      font-family: var(--font-family-sans-serif);
-      font-size: 15px;
-      line-height: 1.6;
-    }
-    body {
-      font-family: var(--font-family-sans-serif);
-      color: #333;
-    }
-
-    /* Reset and base styles */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
-
-    /* Logo sizing */
-    .logo img { max-height: 80px; width: auto; display: block; }
-
-    /* Layout */
-    header { background: #f8f9fa; padding: 1rem 2rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);}
-        .container {
-  /* widen your content area, or remove max-width completely */
-  max-width: 1200px;
-  margin: 0 auto;
-}
-    nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;  
-   padding-left: 1rem;
-  padding-right: 5rem;            
-}
-    .nav-links { list-style: none; display: flex; gap: 1rem; }
-    .dropdown { position: relative; }
-    .dropdown-menu {
-      display: none;
-      position: absolute; top: 100%; left: 0;
-      background: #fff; border: 1px solid #ddd;
-      list-style: none; padding: 0.5rem 0; min-width: 150px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1); white-space: nowrap;
-    }
-    .dropdown:hover .dropdown-menu { display: block; }
-    .dropdown-menu li { padding: 0.3rem 1rem; }
-    .dropdown-menu li:hover { background: #f0f0f0; }
-
-    footer { background: #f8f9fa; text-align: center; padding: 1rem 2rem; font-size: 0.9rem; }
-
-    /* Page title */
-    main { padding: 2rem; }
-    h2 { margin-bottom: 1rem; font-size: 2rem; }
-
+   
     /* Year blocks */
     .publication-year { margin-bottom: 2rem; }
     .publication-year h3 {
