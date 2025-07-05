@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>People | LDS Lab</title>
  <link rel="stylesheet" href="../css/major.css">
+  <style>
+:root {
+  --header-pad: 2rem;
+  --logo-w: 295px;
+  --content-offset: calc(var(--header-pad) + var(--logo-w));
+}
+
+/* now shift only the publications main-container over by that much */
+#people-content {
+  /* cancel the auto-centering… */
+  /*margin: 2rem 0 2rem var(--content-offset);*/
+  /* shrink its max-width so it doesn’t overflow viewport */
+  max-width: calc(1200px - var(--content-offset));
+}</style>
 </head>
 <body>
   <header>
@@ -27,7 +41,7 @@
   </header>
 
 	
-  <main class="container">
+  <main  id="people-content" class="container">
     <section id="current-members">
 
       <h2>Principal Investigator</h2>

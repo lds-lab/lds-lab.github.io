@@ -4,7 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Teaching | Your Lab</title>
+
   <link rel="stylesheet" href="../css/major.css">
+    <style>
+:root {
+  --header-pad: 2rem;
+  --logo-w: 295px;
+  --content-offset: calc(var(--header-pad) + var(--logo-w));
+}
+
+/* now shift only the publications main-container over by that much */
+#teaching-content {
+  /* cancel the auto-centering… */
+ /* margin: 2rem 0 2rem var(--content-offset);*/
+  /* shrink its max-width so it doesn’t overflow viewport */
+  max-width: calc(1200px - var(--content-offset));
+}</style>
 </head>
 <body>
   <header>
@@ -26,7 +41,7 @@
     </div>
   </header>
 
-  <main class="container">
+  <main  id="teaching-content"  class="container">
     <section id="teaching">
       <ul class="teaching-list">
 

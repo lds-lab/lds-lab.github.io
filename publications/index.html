@@ -40,7 +40,19 @@
       margin-bottom: 0.25rem;
     }
     .publication-list li p em { font-style: italic; }
+:root {
+  --header-pad: 2rem;
+  --logo-w: 295px;
+  --content-offset: calc(var(--header-pad) + var(--logo-w));
+}
 
+/* now shift only the publications main-container over by that much */
+#publications-content {
+  /* cancel the auto-centering… */
+ /* margin: 2rem 0 2rem var(--content-offset);*/
+  /* shrink its max-width so it doesn’t overflow viewport */
+  max-width: calc(1200px - var(--content-offset));
+}
     /* Responsive */
     @media (max-width: 600px) {
       .nav-links { flex-direction: column; gap: 0.5rem; }
@@ -67,7 +79,7 @@
     </div>
   </header>
 
-  <main class="container">
+  <main id="publications-content" class="container">
     <!--<h2>Publications</h2>-->
 
     <div class="publication-year">
