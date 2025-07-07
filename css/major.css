@@ -299,13 +299,12 @@ main {
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
- @media (max-width: 600px) {
-      .nav-links { flex-direction: column; gap: 0.5rem; }
-    }
+
 @media (max-width: 600px) {
   .software-grid {
     grid-template-columns: 1fr;
   }
+  .nav-links { flex-direction: column; gap: 0.5rem; }
 }
 
 .software-item {
