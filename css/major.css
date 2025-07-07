@@ -299,6 +299,36 @@ main {
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
+@media (max-width: 768px) {
+  /* shrink your nav padding on small screens */
+  nav {
+    padding: 1rem;
+  }
+
+  /* make the container flex start at the top */
+  header .container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  /* stack the links vertically */
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin: 0;           /* reset any ul margin */
+    padding: 0;          /* reset any ul padding */
+  }
+
+  /* give each link a little tappable area */
+  .nav-links li a {
+    display: block;
+    padding: 0.25rem 0;
+  }
+}
+
 @media (max-width: 600px) {
   .software-grid {
     grid-template-columns: 1fr;
