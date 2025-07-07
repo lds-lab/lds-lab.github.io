@@ -19,7 +19,10 @@
  /* margin: 2rem 0 2rem var(--content-offset);*/
   /* shrink its max-width so it doesn’t overflow viewport */
   max-width: calc(1200px - var(--content-offset));
-}</style>
+}
+ @media (max-width: 600px) {
+      .nav-links { flex-direction: column; gap: 0.5rem; }
+    }</style>
 </head>
 <body>
   <header>
