@@ -353,6 +353,10 @@ main {
   color: #555;
   line-height: 1.4;
 }
+.software-list {
+  list-style: none;
+  padding-left: 0;
+}
 
 /* Publication listings */
 .publication-year {
