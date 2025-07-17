@@ -315,6 +315,8 @@ main {
 }
 .software-item h3 {
   font-size: 1.25rem;
+  color: #8C1515;
+  font-weight: normal;
   margin-bottom: 0.75rem;
 }
 .software-item h3 a {
