@@ -146,5 +146,13 @@
       &copy; 2025 LDS Lab. All rights reserved.
     </div>
   </footer>
+  <script>
+  document
+    .querySelectorAll('#software-content .software-item a')
+    .forEach(link => {
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
+    });
+</script>
 </body>
 </html>
