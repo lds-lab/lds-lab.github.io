@@ -12,7 +12,6 @@
 
 /* Constrain to the same width as the rest of the page */
 .hero .container { max-width: 1200px; }   /* tweak 1100–1200 to taste */
-
 /* Framed banner like Candès: fixed aspect ratio, cover crop, soft shadow */
 .hero-banner {
   margin: 0;
@@ -32,6 +31,9 @@
 }
 #research h2 + p { 
   margin-bottom: 1.75rem; 
+}
+#research, #news {            /* override the global: section { padding: 3rem 2rem } */
+  padding-top: 0.25rem;       /* was 3rem; tweak 0.5–1rem to taste */
 }
 
  @media (max-width: 600px) {
